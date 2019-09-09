@@ -1,0 +1,21 @@
+{
+    "name": "kmvan/aliyun-sms",
+    "description": "Aliyun SMS service for INN AO theme.",
+    "type": "project",
+    "require": {
+        "alibabacloud/client": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+          "InnStudio\\AliyunSms\\": "src/"
+        }
+      },
+    "license": "GPL-v3",
+    "authors": [
+        {
+            "name": "kmvan",
+            "email": "kmvan.com@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

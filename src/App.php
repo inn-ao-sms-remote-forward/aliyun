@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace InnStudio\AliyunSms;
 
 use AlibabaCloud\Client\AlibabaCloud;
-use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
 
 class App
@@ -26,7 +25,7 @@ class App
 
     public function __construct(string $configPath)
     {
-        $configPath = $this->configPath;
+        $this->configPath = $configPath;
 
         $this->setVerificationCode();
         $this->setPhoneNumber();
@@ -97,10 +96,6 @@ class App
             }
 
             \error_log(\json_encode($data, \JSON_UNESCAPED_UNICODE));
-
-            return false;
-        } catch (ClientException $e) {
-            \error_log($e->getErrorMessage());
 
             return false;
         } catch (ServerException $e) {
